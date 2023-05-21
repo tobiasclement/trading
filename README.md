@@ -21,7 +21,6 @@ Install pytorch using the following commands. This is for CUDA 11.1 and python 3
 ```bash
 pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
 ```
-
 - python = 3.8
 - pandas = 1.3.2
 - numpy = 1.21.2
@@ -30,15 +29,22 @@ pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f ht
 - scikit-learn = 0.24.2
 
 ## Usage
+```bash
+python main.py --dataset_name name --index int 
+```
 
-python main.py --dataset_name name --index int [0,1,2]
-
-Example AAPL with 2_index data 
+## Example AAPL with 2_index data 
+```bash
 python main.py --dataset_name APPl --index 2
+```
 
-Important: adjustments in main.py
-* adjust the split_point, begin_date, end_date (dates have to be within dataset)
-* load_from_file= False (data is being preprocessed)
+## Important
+* index allows for 0 (no index data), 1 (one index data), 2 (two index data)
+* column names in data set need to look like this:
+  Date	Open	High	Low	Close	Adj Close	Volume	Open_1	High_1	Low_1	Close_1	Adj Close_1	Open_2	High_2	Low_2	Close_2	Adj Close_2
+
+* adjust the split_point, begin_date, end_date (dates have to be within dataset) in main.py
+* load_from_file= False (data is being preprocessed) in main.py
 * e.g. 'AAPL': YahooFinanceD
 
 ## References
