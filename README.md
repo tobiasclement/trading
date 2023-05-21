@@ -35,7 +35,7 @@ python main.py --dataset_name name --index int
 
 ## Example AAPL with 2_index data 
 ```bash
-python main.py --dataset_name APPl --index 2
+python main.py --dataset_name APPL --index 2
 ```
 
 ## Important
