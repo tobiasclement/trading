@@ -135,7 +135,7 @@ class YahooFinanceDataLoader:
         else: data.rename(columns={'Close': 'close', 'Open': 'open', 'High': 'high', 'Low': 'low'}, inplace=True)
 
         #data.rename(columns={'Close': 'close', 'Open': 'open', 'High': 'high', 'Low': 'low','Close_1': 'close_1', 'Open_1': 'open_1', 'High_1': 'high_1', 'Low_1': 'low_1','Close_2': 'close_2', 'Open_2': 'open_2', 'High_2': 'high_2', 'Low_2': 'low_2'}, inplace=True)
-        data = data.drop(['Adj Close', 'Volume','Adj Close_1'], axis=1)
+        data = data.drop(['Adj Close', 'Volume','Adj Close_1', 'Adj Close_2'], axis=1)
         data['mean_candle'] = data.close
         patterns = label_candles(data)
         return data, list(patterns.keys())
